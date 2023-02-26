@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9E947AE829AB56E200916F11 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E947AE529AB56E200916F11 /* main.swift */; };
-		9E947AE929AB56E200916F11 /* Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E947AE629AB56E200916F11 /* Variable.swift */; };
-		9E947AEA29AB56E200916F11 /* DataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E947AE729AB56E200916F11 /* DataStruct.swift */; };
+		9E947AED29AB5AC200916F11 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E947AEC29AB5AC200916F11 /* main.swift */; };
+		9E947AEF29AB5B5200916F11 /* DataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E947AEE29AB5B5200916F11 /* DataStruct.swift */; };
+		9E947AF129AB5B7F00916F11 /* Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E947AF029AB5B7F00916F11 /* Variable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,9 +26,10 @@
 
 /* Begin PBXFileReference section */
 		9E947ADB29AB56CB00916F11 /* todo_cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = todo_cli; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E947AE529AB56E200916F11 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = ../../Todo/Todo/main.swift; sourceTree = "<group>"; };
-		9E947AE629AB56E200916F11 /* Variable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Variable.swift; path = ../../Todo/Todo/Variable.swift; sourceTree = "<group>"; };
-		9E947AE729AB56E200916F11 /* DataStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataStruct.swift; path = ../../Todo/Todo/DataStruct.swift; sourceTree = "<group>"; };
+		9E947AEB29AB5AC200916F11 /* todo_cli-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "todo_cli-Bridging-Header.h"; sourceTree = "<group>"; };
+		9E947AEC29AB5AC200916F11 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		9E947AEE29AB5B5200916F11 /* DataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStruct.swift; sourceTree = "<group>"; };
+		9E947AF029AB5B7F00916F11 /* Variable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +62,10 @@
 		9E947ADD29AB56CB00916F11 /* todo_cli */ = {
 			isa = PBXGroup;
 			children = (
-				9E947AE729AB56E200916F11 /* DataStruct.swift */,
-				9E947AE529AB56E200916F11 /* main.swift */,
-				9E947AE629AB56E200916F11 /* Variable.swift */,
+				9E947AEC29AB5AC200916F11 /* main.swift */,
+				9E947AEB29AB5AC200916F11 /* todo_cli-Bridging-Header.h */,
+				9E947AEE29AB5B5200916F11 /* DataStruct.swift */,
+				9E947AF029AB5B7F00916F11 /* Variable.swift */,
 			);
 			path = todo_cli;
 			sourceTree = "<group>";
@@ -100,6 +102,7 @@
 				TargetAttributes = {
 					9E947ADA29AB56CB00916F11 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -126,9 +129,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E947AE829AB56E200916F11 /* main.swift in Sources */,
-				9E947AE929AB56E200916F11 /* Variable.swift in Sources */,
-				9E947AEA29AB56E200916F11 /* DataStruct.swift in Sources */,
+				9E947AEF29AB5B5200916F11 /* DataStruct.swift in Sources */,
+				9E947AF129AB5B7F00916F11 /* Variable.swift in Sources */,
+				9E947AED29AB5AC200916F11 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,10 +254,18 @@
 		9E947AE329AB56CB00916F11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JFD4Q98ZA3;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "todo_cli/todo_cli-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -262,10 +273,17 @@
 		9E947AE429AB56CB00916F11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JFD4Q98ZA3;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "todo_cli/todo_cli-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
